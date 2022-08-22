@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+.dragable {
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.animate-list-move {
+  transition: transform 0.3s ease;
+}
+.animate-list-enter-active,
+.animate-list-leave-active {
+  transition: all 0.3s ease;
+}
+.animate-list-enter-from,
+.animate-list-leave-to {
+  opacity: 0;
+  transform: translateX(200px);
+}
+
+.kbd {
+  @apply border border-blue-500 p-1 bg-gray-50 font-light text-blue-500 rounded-md mr-1 ml-1 w-6 h-6 leading-3 inline-block text-center shadow-md;
+}
