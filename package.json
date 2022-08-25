@@ -1,7 +1,7 @@
 {
-  "name": "electron-vue-vite-template",
+  "name": "yet-another-editor",
   "version": "1.0.0",
-  "description": "electron-vue-vite-template",
+  "description": "yet-another-editor",
   "main": "index.js",
   "scripts": {
     "test": "echo none && exit 0",

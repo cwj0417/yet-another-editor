@@ -4,7 +4,7 @@
  */
 const config = {
   productName: '',
-  appId: 'com.cwj.electron-vue-vite-template',
+  appId: 'com.cwj.yet-another-editor',
   electronVersion: process.env.ELECTRON_VERSION, // only used for development debugging
   directories: {
     output: 'build/built',
@@ -16,7 +16,7 @@ const config = {
   publish: [{
     provider: 'github',
     owner: 'cwj0417',
-    repo: 'electron-vue-vite-template',
+    repo: 'yet-another-editor',
     releaseType: 'release'
   }],
   files: [

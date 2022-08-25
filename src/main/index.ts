@@ -49,19 +49,8 @@ autoUpdater.on('download-progress', (progressObj) => {
 autoUpdater.on('update-downloaded', (info) => {
 });
 
-let mainWindowConfig: BrowserWindowConstructorOptions = {
-  width: 960,
-  minWidth: 960,
-  height: 552,
-  minHeight: 552,
-  frame: false,
-  webPreferences: {
-    preload: mainPreload,
-  }
-}
-
 const windowConf: {
-  [prop in 'main' | 'timer' | 'schedule' | 'inspiration']: {
+  [prop in 'main']: {
     url: string,
     conf: BrowserWindowConstructorOptions
   }
@@ -69,13 +58,14 @@ const windowConf: {
   main: {
     url: mainPage,
     conf: {
-      width: 960,
-      minWidth: 960,
-      height: 552,
-      minHeight: 552,
+      width: 1169,
+      minWidth: 1169,
+      height: 764,
+      minHeight: 764,
       frame: false,
       webPreferences: {
         preload: mainPreload,
+        sandbox: false,
       }
     },
   },
@@ -88,7 +78,7 @@ function createWindow(type: keyof typeof windowConf = 'main') {
     mainWindow!.show()
   } else {
     mainWindow = new BrowserWindow({
-      ...mainWindowConfig,
+      ...windowConf[type].conf,
       show: false,
     })
     mainWindow.once('ready-to-show', mainWindow.show)
